@@ -55,13 +55,6 @@ pinBtn.click();
 // Gift
 // =========================
 
-document
-.getElementById("giftBox")
-.addEventListener("click",()=>{
-
-showPage("letterPage");
-
-});
 
 // =========================
 // Lanjut Gallery
@@ -159,3 +152,47 @@ music.play().catch(()=>{});
 }
 
 },{once:true});
+// ===========================
+// Floating Hearts
+// ===========================
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+},600);
+
+
+// ===========================
+// Gift Animation
+// ===========================
+
+document
+.getElementById("giftBox")
+.addEventListener("click",function(){
+
+this.classList.add("open");
+
+setTimeout(()=>{
+
+showPage("letterPage");
+
+},600);
+
+});
