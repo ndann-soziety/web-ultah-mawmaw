@@ -1,10 +1,47 @@
 // =========================
-// Musik
+// Ambil Elemen
 // =========================
 
 const music = document.getElementById("bgMusic");
-
 const startBtn = document.getElementById("startBtn");
+const pinBtn = document.getElementById("pinBtn");
+const giftBox = document.getElementById("giftBox");
+const galleryBtn = document.getElementById("galleryBtn");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const photo = document.getElementById("photo");
+
+// =========================
+// Ganti Halaman
+// =========================
+
+function showPage(id) {
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+}
+
+// =========================
+// Loading
+// =========================
+
+window.addEventListener("load", () => {
+
+    const loading = document.getElementById("loading");
+
+    if (loading) {
+        setTimeout(() => {
+            loading.classList.add("hide");
+        }, 1000);
+    }
+
+});
+
+// =========================
+// Tap To Open
+// =========================
 
 startBtn.addEventListener("click", () => {
 
@@ -18,36 +55,30 @@ startBtn.addEventListener("click", () => {
 // PIN
 // =========================
 
-const pinBtn = document.getElementById("pinBtn");
-
 pinBtn.addEventListener("click", () => {
 
     const pin = document.getElementById("pinInput").value;
 
-    if(pin === "290324"){
+    if (pin === "290324") {
 
         showPage("giftPage");
 
-    }else{
+    } else {
 
-        document.getElementById("pinError").innerHTML =
-        "PIN salah ❤️";
+        document.getElementById("pinError").textContent =
+            "PIN salah ❤️";
 
     }
 
 });
 
-// tekan Enter
+document.getElementById("pinInput").addEventListener("keydown", function(e){
 
-document
-.getElementById("pinInput")
-.addEventListener("keypress",function(e){
+    if(e.key==="Enter"){
 
-if(e.key==="Enter"){
+        pinBtn.click();
 
-pinBtn.click();
-
-}
+    }
 
 });
 
@@ -55,16 +86,9 @@ pinBtn.click();
 // Gift
 // =========================
 
+giftBox.addEventListener("click", () => {
 
-// =========================
-// Lanjut Gallery
-// =========================
-
-document
-.getElementById("galleryBtn")
-.addEventListener("click",()=>{
-
-showPage("galleryPage");
+    showPage("letterPage");
 
 });
 
@@ -72,134 +96,78 @@ showPage("galleryPage");
 // Gallery
 // =========================
 
-const photos=[
+galleryBtn.addEventListener("click", () => {
 
-"photo1.jpg",
+    showPage("galleryPage");
 
-"photo2.jpg"
+});
+
+const photos = [
+
+    "photo1.jpg",
+    "photo2.jpg"
 
 ];
 
-let current=0;
+let current = 0;
 
-const photo=document.getElementById("photo");
+nextBtn.addEventListener("click", () => {
 
-document
-.getElementById("nextBtn")
-.addEventListener("click",()=>{
+    current++;
 
-current++;
+    if(current >= photos.length){
 
-if(current>=photos.length){
+        current = 0;
 
-current=0;
+    }
 
-}
-
-photo.src=photos[current];
+    photo.src = photos[current];
 
 });
 
-document
-.getElementById("prevBtn")
-.addEventListener("click",()=>{
+prevBtn.addEventListener("click", () => {
 
-current--;
+    current--;
 
-if(current<0){
+    if(current < 0){
 
-current=photos.length-1;
+        current = photos.length - 1;
 
-}
+    }
 
-photo.src=photos[current];
+    photo.src = photos[current];
 
 });
 
 // =========================
-// Ganti Halaman
-// =========================
-
-function showPage(id){
-
-document.querySelectorAll(".page").forEach(page=>{
-
-page.classList.remove("active");
-
-});
-
-document
-.getElementById(id)
-.classList.add("active");
-
-}
-
-// =========================
-// Musik Loop
-// =========================
-
-music.volume=0.6;
-
-music.loop=true;
-
-// Coba autoplay lagi saat user menyentuh layar
-document.body.addEventListener("click",()=>{
-
-if(music.paused){
-
-music.play().catch(()=>{});
-
-}
-
-},{once:true});
-// ===========================
 // Floating Hearts
-// ===========================
+// =========================
 
-setInterval(()=>{
+setInterval(() => {
 
-const heart=document.createElement("div");
+    const heart = document.createElement("div");
 
-heart.className="heart";
+    heart.className = "heart";
 
-heart.innerHTML="❤️";
+    heart.innerHTML = "❤️";
 
-heart.style.left=Math.random()*100+"vw";
+    heart.style.left = Math.random() * 100 + "vw";
 
-heart.style.fontSize=(20+Math.random()*25)+"px";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
 
-document.body.appendChild(heart);
+    document.body.appendChild(heart);
 
-setTimeout(()=>{
+    setTimeout(() => {
 
-heart.remove();
+        heart.remove();
 
-},8000);
+    }, 7000);
 
-},600);
+}, 700);
 
+// =========================
+// Volume Musik
+// =========================
 
-// ===========================
-// Gift Animation
-// ===========================
-
-document
-.getElementById("giftBox")
-.addEventListener("click",function(){
-
-this.classList.add("open");
-
-setTimeout(()=>{
-
-showPage("letterPage");
-
-},600);
-
-});
-{window.addEventListener("load",()=>{      setTimeout(()=>{          document         .getElementById("loading")         .classList.add("hide");      },1500);  });}
-
-{`function confetti(){
-
-    for(let i=0;i)}
-    
-}
+music.loop = true;
+music.volume = 0.6;
