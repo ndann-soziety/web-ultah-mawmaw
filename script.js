@@ -74,9 +74,9 @@ showPage("galleryPage");
 
 const photos=[
 
-"assets/photo1.jpg",
+"photo1.jpg",
 
-"assets/photo2.jpg"
+"photo2.jpg"
 
 ];
 
