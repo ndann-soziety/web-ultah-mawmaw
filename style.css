@@ -1,0 +1,199 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffeef4;
+    overflow:hidden;
+    color:#444;
+}
+
+.page{
+    width:100%;
+    height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.page.active{
+    display:flex;
+}
+
+.container{
+    text-align:center;
+}
+
+.container h1{
+    font-size:2.5rem;
+    color:#ff4f81;
+    margin-bottom:10px;
+}
+
+.container h2{
+    font-family:'Great Vibes',cursive;
+    font-size:3.2rem;
+    color:#ff2d55;
+    margin-bottom:40px;
+}
+
+button{
+    background:#ff4f81;
+    color:white;
+    border:none;
+    border-radius:50px;
+    padding:15px 35px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.pin-box{
+    width:340px;
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 10px 35px rgba(0,0,0,.12);
+}
+
+.pin-box h2{
+    color:#ff4f81;
+    margin-bottom:20px;
+}
+
+.pin-box input{
+    width:100%;
+    padding:15px;
+    border:2px solid #ffb3c7;
+    border-radius:12px;
+    font-size:18px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+#pinError{
+    color:red;
+    margin-top:15px;
+}
+
+.gift-container{
+    text-align:center;
+}
+
+#giftBox{
+    width:220px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#giftBox:hover{
+    transform:scale(1.08) rotate(3deg);
+}
+
+.gift-container p{
+    margin-top:20px;
+    font-size:20px;
+}
+
+.letter{
+    width:100%;
+    max-width:700px;
+    height:88vh;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    overflow-y:auto;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.letter h1{
+    text-align:center;
+    color:#ff4f81;
+    margin-bottom:30px;
+}
+
+.reasons p{
+    margin-bottom:16px;
+    line-height:1.8;
+}
+
+.reasons h2{
+    margin-top:40px;
+    text-align:center;
+    color:#ff2d55;
+    font-family:'Great Vibes',cursive;
+    font-size:2.3rem;
+}
+
+#galleryBtn{
+    display:block;
+    margin:40px auto 0;
+}
+
+.gallery{
+    text-align:center;
+    width:100%;
+}
+
+.gallery img{
+    width:90%;
+    max-width:420px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.buttons button{
+    margin:0 10px;
+}
+
+@media(max-width:768px){
+
+.container h1{
+    font-size:2rem;
+}
+
+.container h2{
+    font-size:2.6rem;
+}
+
+.pin-box{
+    width:95%;
+}
+
+.letter{
+    width:100%;
+    height:92vh;
+    padding:20px;
+}
+
+.gallery img{
+    width:100%;
+}
+
+button{
+    width:100%;
+    margin-top:10px;
+}
+
+.buttons button{
+    width:45%;
+}
+
+}
