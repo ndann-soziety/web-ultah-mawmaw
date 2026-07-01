@@ -196,3 +196,9 @@ showPage("letterPage");
 },600);
 
 });
+{window.addEventListener("load",()=>{      setTimeout(()=>{          document         .getElementById("loading")         .classList.add("hide");      },1500);  });}
+
+{`function confetti(){
+
+    for(let i=0;i
+    
