@@ -310,3 +310,16 @@ transform:scale(1);
 }
 
 }
+{body{     background:linear-gradient(135deg,#ffe6ef,#fff5f8);     min-height:100vh; }}
+
+{#loading{     position:fixed;     inset:0;     background:#fff0f5;     display:flex;     flex-direction:column;     justify-content:center;     align-items:center;     z-index:99999;     transition:1s; }}
+
+{#loading h1{     font-size:70px;     animation:beat 1s infinite; }}
+
+{@keyframes beat{     0%,100%{transform:scale(1);}     50%{transform:scale(1.2);} }}
+
+{#loading.hide{     opacity:0;     visibility:hidden; }}
+
+{button{     box-shadow:0 8px 20px rgba(255,79,129,.25); }}
+
+{.letter, .pin-box{     backdrop-filter:blur(8px); }}
