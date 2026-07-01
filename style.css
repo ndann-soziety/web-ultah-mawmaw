@@ -323,3 +323,22 @@ transform:scale(1);
 {button{     box-shadow:0 8px 20px rgba(255,79,129,.25); }}
 
 {.letter, .pin-box{     backdrop-filter:blur(8px); }}
+
+#loading{
+    position:fixed;
+    inset:0;
+    background:#fdecef;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+
+    transition:.6s;
+}
+
+#loading.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
