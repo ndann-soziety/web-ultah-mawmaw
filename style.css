@@ -197,3 +197,116 @@ button{
 }
 
 }
+/* ===========================
+   Animasi Fade
+=========================== */
+
+.page{
+    opacity:0;
+    visibility:hidden;
+    transition:all .6s ease;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.page.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ===========================
+   Floating Heart
+=========================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:#ff4d88;
+
+    animation:fly 8s linear infinite;
+
+    pointer-events:none;
+
+    opacity:.8;
+
+    z-index:9999;
+
+}
+
+@keyframes fly{
+
+0%{
+
+transform:translateY(0) scale(.6);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+Gift Animation
+=========================== */
+
+#giftBox{
+
+transition:.4s;
+
+}
+
+#giftBox.open{
+
+transform:scale(1.3) rotate(15deg);
+
+opacity:0;
+
+}
+
+/* Gallery */
+
+.gallery img{
+
+transition:.5s;
+
+animation:fadePhoto .5s;
+
+}
+
+@keyframes fadePhoto{
+
+from{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
